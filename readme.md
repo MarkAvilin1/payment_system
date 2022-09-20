@@ -12,6 +12,8 @@
 3. /item/id/ ==> Product details page
 4. /buy/id/ ==> To buy the product
 
+# Heroku link
+https://paymet-system.herokuapp.com/
 ###############################################################################################################################
 
 # Тестовое задание
