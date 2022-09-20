@@ -13,7 +13,7 @@
 4. /buy/id/ ==> To buy the product
 
 # Heroku link
-https://paymet-system.herokuapp.com/
+https://django-stripe-pay.herokuapp.com/
 ###############################################################################################################################
 
 # Тестовое задание
