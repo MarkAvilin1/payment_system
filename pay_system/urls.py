@@ -1,3 +1,5 @@
+from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path
 
@@ -13,4 +15,4 @@ urlpatterns = [
     path('payment/<int:pk>', vs.payment, name='payment'),
     path('success/', vs.success, name='success'),
     path('wrong/', vs.wrong, name='wrong'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

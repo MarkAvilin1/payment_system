@@ -1,1 +1,1 @@
-web gunicorn demo.wsgi --log-file -
+web: gunicorn pay_system.wsgi --log-file -
