@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-nb5p@@3_v0s(yulmvec9jn*&z76m0_r5(mrpm*^ehl-p#0k+r(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://paymet-system.herokuapp.com/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
