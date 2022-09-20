@@ -1,15 +1,16 @@
-#Payment system withe (Django and Stripe)
-#Navigation:
+# Payment system withe (Django and Stripe)
+
+# Navigation:
 1. Download project files from https://github.com/MarkAvilin1/payment_system.
 2. Install all requirements.
 3. Make all migrations.
 4. run server.
 
-#Helpful links:
-/ ==> The home page
-/store/ ==> Store page
-/item/id/ ==> Product details page
-/buy/id/ ==> To buy the product
+# Helpful links:
+1. / ==> The home page
+2. /store/ ==> Store page
+3. /item/id/ ==> Product details page
+4. /buy/id/ ==> To buy the product
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 Тестовое задание
 
@@ -44,33 +45,3 @@ GET /item/{id}, c помощью которого можно получить п
 таком случае они корректно отображаются в Stripe Checkout форме. 
 Добавить поле Item.currency, создать 2 Stripe Keypair на две разные валюты и в зависимости от валюты выбранного товара предлагать оплату 
 в соответствующей валюте Реализовать не Stripe Session, а Stripe Payment Intent.
-
-Пример
-
-API метод для получения HTML c кнопкой на платежную форму от Stripe для Item с id=1: 
-curl -X GET http://localhost:8000/item/1
-
-Результат - HTML c инфой и кнопкой:
-<html>
-  <head>
-    <title>Buy Item 1</title>
-  </head>
-  <body>
-    <h1>Item 1</h1>
-    <p>Description of Item 1</p>
-    <p>1111</p>
-    <button id="buy-button">Buy</button>
-    <script type="text/javascript">
-      var stripe = Stripe('pk_test_a9nwZVa5O7b0xz3lxl318KSU00x1L9ZWsF');
-      var buyButton = document.getElementById(buy-button');
-      buyButton.addEventListener('click', function() {
-        // Create a new Checkout Session using the server-side endpoint 
-        // Redirect to Stripe Session Checkout
-        fetch('/buy/1', {method: 'GET'})
-        .then(response => return response.json())
-        .then(session => stripe.redirectToCheckout({ sessionId: session.id }))
-      });
-    </script>
-  </body>
-</html>
-
