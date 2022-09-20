@@ -1,3 +1,16 @@
+#Payment system withe (Django and Stripe)
+#Navigation:
+1. Download project files from https://github.com/MarkAvilin1/payment_system.
+2. Install all requirements.
+3. Make all migrations.
+4. run server.
+
+#Helpful links:
+/ ==> The home page
+/store/ ==> Store page
+/item/id/ ==> Product details page
+/buy/id/ ==> To buy the product
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 Тестовое задание
 
 После проверки задания мы обязательно прокомментируем ваше решение. Код тестового задания не будет использован в коммерческих целях. 
