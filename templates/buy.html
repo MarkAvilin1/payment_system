@@ -1,0 +1,80 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Buy {{ product.name }} {% endblock %}
+
+{% block content %}
+
+
+<div class="card card-product-grid p-5">
+    <div class="info-wrap">
+        <a href="{% url 'product_detail' product.id %}" class="title" style="text-decoration:none">
+            <h4>
+                {{ product.name }}
+            </h4>
+        </a>
+        <p>{{ product.description }}</p>
+        <p class="p-1">Price ${{ product.price }}</p>
+
+        <p class="p-1">{{ product.quantity }} pieces left</p>
+
+    </div>
+
+</div>
+
+<hr>
+<div id="container">
+    <div class="column-6">
+        <div id="left-wrapper">
+            <div id="left-wrapper-header">
+                <h3>Payment Section</h3>
+            </div>
+            <div style="clear:left"></div>
+            <hr>
+            <!-- Add form here -->
+            <form action="{% url 'payment' product.id %}" method="post" id="payment-form">
+                {% csrf_token %}
+                <div class="form-field-12">
+                    <label for="product-name">Product Name: </label>
+                    <input type="text" id="product-name" class="rounded p-1 m-1" name="product_name" value="{{ product.name }}" disabled><br>
+                    <label for="amount">The Price:</label>
+                    <select required name="amount" id="amount">
+                        <option selected value="{{ product.price }}">${{ product.price }}</option>
+                    </select>
+                </div>
+                <br><br>
+                <hr>
+                <div class="form-field-6">
+                    <input required type="text" class="rounded p-1 m-1" name="email" placeholder="email...">
+                </div>
+
+                <div class="form-field-6">
+                    <input required type="text" class="rounded p-1 m-1" name="name" placeholder="Name...">
+                </div>
+
+                <div class="form-row">
+                    <label for="card-element">
+                        Credit or debit card
+                    </label>
+                    <div id="card-element">
+                        <!-- A Stripe Element will be inserted here. -->
+                    </div>
+
+                    <!-- Used to display form errors. -->
+                    <div id="card-errors" role="alert"></div>
+                </div>
+
+                <div style="clear:left"></div>
+                <hr>
+
+                <input class="myButton btn btn-success" style="background-color:#10a195" type="submit"
+                       value="Submit Payment" name="">
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

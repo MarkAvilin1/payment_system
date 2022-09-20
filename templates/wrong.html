@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Something Went Wrong! {% endblock %}
+
+{% block content %}
+
+<div class="alert alert-danger" role="alert">
+  Something Went Wrong! <br> Please try again
+  <a href="{% url 'store'%}" > Go bake to store....</a>
+</div>
+
+{% endblock %}

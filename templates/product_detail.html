@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% block title %} {{ product.name }} {% endblock %}
+
+{% block content %}
+
+<div class="card card-product-grid p-5">
+    <div class="info-wrap">
+        <a href="{% url 'product_detail' product.id %}" class="title" style="text-decoration:none">
+            <h4>
+            {{ product.name }}
+            </h4>
+        </a>
+        <p>{{ product.description }}</p>
+        <p class="p-1">Price ${{ product.price }}</p>
+
+        <p class="p-1">{{ product.quantity }} pieces left</p>
+
+    </div>
+    {% if product.quantity > 0 %}
+
+        <a href="{% url 'buy' product.id %}" class="btn btn-primary">Buy Now!</a>
+
+    {% endif %}
+</div>
+
+
+{% endblock %}
