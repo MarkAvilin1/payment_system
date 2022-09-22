@@ -12,7 +12,7 @@ class Product(models.Model):
     is_available = models.BooleanField(default=True)
 
     def get_url(self):
-        return reverse('product_detail', args=[self.id, self.slug])
+        return reverse('product_detail', args=[self.slug, self.id])
 
     def __str__(self):
         return self.name
